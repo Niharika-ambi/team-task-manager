@@ -20,7 +20,7 @@ export default function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/tasks', {
+      const res = await axios.get('team-task-manager-production-1006.up.railway.app/tasks', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setTasks(res.data)
@@ -29,7 +29,7 @@ export default function Tasks() {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/projects', {
+      const res = await axios.get('team-task-manager-production-1006.up.railway.app/projects', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setProjects(res.data)
@@ -38,7 +38,7 @@ export default function Tasks() {
 
   const fetchMembers = async (projectId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/projects/${projectId}/members`, {
+      const res = await axios.get(`team-task-manager-production-1006.up.railway.app/projects/${projectId}/members`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setMembers(res.data)
@@ -47,7 +47,7 @@ export default function Tasks() {
 
   const createTask = async () => {
     try {
-      await axios.post('http://localhost:5000/tasks', form, {
+      await axios.post('team-task-manager-production-1006.up.railway.app/tasks', form, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setForm({ title: '', description: '', due_date: '', project_id: '', assigned_to: '' })
@@ -58,7 +58,7 @@ export default function Tasks() {
 
   const updateStatus = async (taskId, status) => {
     try {
-      await axios.patch(`http://localhost:5000/tasks/${taskId}/status`,
+      await axios.patch(`team-task-manager-production-1006.up.railway.app/tasks/${taskId}/status`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       )

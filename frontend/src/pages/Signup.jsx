@@ -13,7 +13,7 @@ export default function Signup() {
 
   const handleSignup = async () => {
     try {
-      await axios.post('http://localhost:5000/auth/signup', {
+      await axios.post('team-task-manager-production-1006.up.railway.app/auth/signup', {
         name, email, password, role, adminSecret
       })
       navigate('/login')

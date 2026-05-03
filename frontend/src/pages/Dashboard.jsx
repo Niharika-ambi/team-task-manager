@@ -16,7 +16,7 @@ export default function Dashboard() {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/tasks/dashboard', {
+      const res = await axios.get('team-task-manager-production-1006.up.railway.app/tasks/dashboard', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setStats(res.data)
@@ -25,7 +25,7 @@ export default function Dashboard() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/tasks', {
+      const res = await axios.get('team-task-manager-production-1006.up.railway.app/tasks', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setTasks(res.data)
