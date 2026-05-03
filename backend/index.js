@@ -4,8 +4,8 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-  origin: 'https://meticulous-truth-production-8f6d.up.railway.app',
-  credentials: true
+  origin: '*',
+  credentials: false
 }));
 app.use(express.json());
 
