@@ -10,7 +10,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('team-task-manager-production-1006.up.railway.app/auth/login', { email, password })
+      const res = await axios.post('https://team-task-manager-production-1006.up.railway.app/auth/login', { email, password })
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('user', JSON.stringify(res.data.user))
       navigate('/dashboard')
